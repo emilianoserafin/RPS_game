@@ -13,13 +13,22 @@ const msg = document.querySelector('#message');
 let userPlay = "";
 let compPlay = "";
 
+// store points
+let pPoints = 0;
+let cPoints = 4;
+
 // wait for user to click/start game
 startBtn.addEventListener('click', () => {
-    // get users action (rock paper or scissors)
-    playGame();
+    if (startBtn.textContent === "Start" || startBtn.textContent === "Next Round") {
+        // get users action (rock paper or scissors)
+        playGame();
+    } else {
+        resetGame();
+    }
 })
 
-const promptUser = function () {
+// function to ask user for their choice (rock paper or scissors)
+function promptUser() {
     // ask user for their choice
     userPlay = prompt("Please choose Rock, Paper or Scissors").toLowerCase();
     // check to see if choice was valid
@@ -35,17 +44,17 @@ const promptUser = function () {
 }
 
 // function that returns 1 of 3 options (rock, paper or scissors) 
-const computerPlay = function () {
+function computerPlay() {
     let choice = function () {
         switch (Math.floor(Math.random() * 3) + 1) {
             case 1:
-                choice = "Rock";
+                choice = "rock";
                 break;
             case 2:
-                choice = "Paper";
+                choice = "paper";
                 break;
             case 3:
-                choice = "Scissors";
+                choice = "scissors";
                 break;
             default:
         }
@@ -55,9 +64,65 @@ const computerPlay = function () {
     compPlay = choice;
 }
 
-const playGame = function () {
-    promptUser();
+function resetGame() {
+    pPoints = 0;
+    cPoints = 0;
+    pScore.textContent = "0";
+    cScore.textContent = "0";
+    msg.textContent = "";
+    startBtn.textContent = "Start";
+}
+
+
+function playGame() {
+
     computerPlay();
+    promptUser();
+
+    if (userPlay === compPlay) {
+        msg.textContent = `Tie! Try Again`
+    }
+
+    else if (userPlay === "rock") {
+        if (compPlay === "scissors") {
+            msg.textContent = `You Win! Rock beats Scissors.`;
+            pPoints += 1;
+        } else {
+            msg.textContent = `You Lose! Paper beats Rock.`;
+            cPoints += 1;
+        }
+    }
+    else if (userPlay === "paper") {
+        if (compPlay === "rock") {
+            msg.textContent = `You Win! Paper beats Rock.`;
+            pPoints += 1;
+        } else {
+            msg.textContent = `You Lose! Scissors beats Paper.`;
+            cPoints += 1;
+        }
+    }
+    else if (userPlay === "scissors") {
+        if (compPlay === "paper") {
+            msg.textContent = `You Win! Scissors beats Paper.`;
+            pPoints += 1;
+        } else {
+            msg.textContent = `You Lose! Rock beats Scissors.`;
+            cPoints += 1;
+        }
+    }
+
+    pScore.textContent = `${pPoints}`;
+    cScore.textContent = `${cPoints}`;
+    startBtn.textContent = "Next Round";
+
+    if (pPoints === 5) {
+        msg.textContent = "YOU WIN!";
+        startBtn.textContent = "Reset";
+    } else if (cPoints === 5) {
+        msg.textContent = "YOU LOSE!";
+        startBtn.textContent = "Reset";
+    }
+
 }
 
 
