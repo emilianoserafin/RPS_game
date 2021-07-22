@@ -1,7 +1,7 @@
 /**
  * A Javascript Rock Paper Scissors game played in the console.
  */
-
+// initialize variables and get html elements
 const startBtn = document.querySelector('#startGame');
 const pScore = document.querySelector('#pScore');
 const cScore = document.querySelector('#cScore');
@@ -19,10 +19,12 @@ let cPoints = 4;
 
 // wait for user to click/start game
 startBtn.addEventListener('click', () => {
+    //determine which function to fire once button is clicked
     if (startBtn.textContent === "Start" || startBtn.textContent === "Next Round") {
         // get users action (rock paper or scissors)
         playGame();
     } else {
+        // start a new game
         resetGame();
     }
 })
@@ -60,10 +62,13 @@ function computerPlay() {
         }
         return choice;
     }
+    // updates html on page with computers choice
     cChoice.innerHTML = `<h4>${choice().toUpperCase()}</h4>`;
+    // stores computer choice to variable to use to compare against players choice
     compPlay = choice;
 }
 
+// resets points and text when game is over
 function resetGame() {
     pPoints = 0;
     cPoints = 0;
@@ -73,16 +78,17 @@ function resetGame() {
     startBtn.textContent = "Start";
 }
 
-
+// gets choices from both player and computer and checks for winner
 function playGame() {
 
     computerPlay();
     promptUser();
 
+    // first checks for tie
     if (userPlay === compPlay) {
         msg.textContent = `Tie! Try Again`
     }
-
+    // checks for winner based on player selection, updates points and text accordingly.
     else if (userPlay === "rock") {
         if (compPlay === "scissors") {
             msg.textContent = `You Win! Rock beats Scissors.`;
@@ -111,10 +117,12 @@ function playGame() {
         }
     }
 
+    // once winner of round is decided, update scoreboard and button text
     pScore.textContent = `${pPoints}`;
     cScore.textContent = `${cPoints}`;
     startBtn.textContent = "Next Round";
 
+    // checks to see if someone has won 5 rounds and updates text and button
     if (pPoints === 5) {
         msg.textContent = "YOU WIN!";
         startBtn.textContent = "Reset";
