@@ -80,6 +80,9 @@ function resetGame() {
     pScore.textContent = "0";
     cScore.textContent = "0";
     msg.textContent = "";
+    pChoice.textContent = "";
+    cChoice.textContent = "";
+
 
 }
 

@@ -64,6 +64,7 @@
 #pScore,
 #cScore {
   color: red;
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   justify-content: center;
   font-size: 2em;
