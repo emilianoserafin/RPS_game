@@ -16,14 +16,19 @@
   display: flex;
   width: 150px;
   height: 150px;
-
   align-items: center;
   margin: 40px;
+}
+
+#scissors img {
+  transform: scale(0.9);
+  padding: 10px;
 }
 
 .choice > img:hover {
   width: 180px;
   height: 180px;
+  background-color: #f1f1f1;
 }
 
 .center {
