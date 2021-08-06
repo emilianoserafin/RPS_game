@@ -4,39 +4,47 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-       <div class="container">
-           <div class="center">
-               <h1>Rock, Paper, Scissors</h1>
-               <p>First to 5 wins!</p>
-               <button id="startGame">Start</button>
-               <div class="scores">
-                   <div class="player">
-                    <span id="pScore">0</span>
-                    <h3>Player</h3>
-                    <span id="pChoice"></span>
-                   </div>
-                   <div class="computer">
-                    <span id="cScore">0</span>
-                    <h3>Computer</h3>
-                    <span id="cChoice"></span>
-                   </div>
-               </div>
-               <h2 id="message"></h2>
-           </div>
-       </div>
-        
-        <script src="app.js" ></script>
-    </body>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="container">
+      <div class="center">
+        <h1>Rock, Paper, Scissors</h1>
+        <p>First to 5 wins!</p>
+        <button id="startGame">Start</button>
+        <div class="btn-container">
+          <div class="choice"><img src="rock.svg" alt="rock" /></div>
+          <div class="choice"><img src="paper.svg" alt="paper" /></div>
+          <div class="choice"><img src="scissors.svg" alt="scissors" /></div>
+        </div>
+        <div class="scores">
+          <div class="player">
+            <span id="pScore">0</span>
+            <h3>Player</h3>
+            <span id="pChoice"></span>
+          </div>
+          <div class="computer">
+            <span id="cScore">0</span>
+            <h3>Computer</h3>
+            <span id="cChoice"></span>
+          </div>
+        </div>
+        <h2 id="message"></h2>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
 </html>

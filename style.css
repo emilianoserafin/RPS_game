@@ -1,43 +1,65 @@
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
-.center{
-    width: 50vh;
-    height: 100px;
-    display: flex;
-    flex-direction:  column;
-    align-items: center;
-    justify-content: center;
+.btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 20px;
 }
 
-#startGame{
-    height: 50px;
-    width: 100px;
-    border-radius: 5px;
-    background-color: #555;
-    color: #fff;
+.choice {
+  display: flex;
+  width: 150px;
+  height: 150px;
+
+  align-items: center;
+  margin: 40px;
+}
+
+.choice > img:hover {
+  width: 180px;
+  height: 180px;
+}
+
+.center {
+  width: 50vh;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#startGame {
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  background-color: #555;
+  color: #fff;
 }
 
 #startGame:hover {
-    background-color: rgb(175, 174, 174);
-    color: rgb(34, 34, 34);
+  background-color: rgb(175, 174, 174);
+  color: rgb(34, 34, 34);
 }
 
-.scores{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 30vw;
-    margin-top: 50px;
+.scores {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 30vw;
+  margin-top: 50px;
 }
 
-#pScore, #cScore {
-    color: red;
-    display: flex;
-    justify-content: center;
-    font-size: 2em;
+#pScore,
+#cScore {
+  color: red;
+  display: flex;
+  justify-content: center;
+  font-size: 2em;
 }

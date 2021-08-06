@@ -15,7 +15,7 @@ let compPlay = "";
 
 // store points
 let pPoints = 0;
-let cPoints = 4;
+let cPoints = 0;
 
 // wait for user to click/start game
 startBtn.addEventListener('click', () => {
